@@ -31,6 +31,14 @@ class TestLibrary < MiniTest::Test
 
   end
 
+def test_change_book_details
+  new_library = Library.new()
+  assert_equal({
+    title: "Trail",
+    rental_details: {
+      student_name: "Kat",
+      date: "01/12/09"}}, new_library.change_book_details("Trail", "Kat", "01/12/09"))
+end
 
 
 

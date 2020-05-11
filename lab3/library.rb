@@ -24,40 +24,50 @@ class Library
       }
       }]
 
-
-      def find_book(title)
-        for book in @books
-          if book[:title] == title
-            return book
-          end
-        end
-      end
-
-# doesn't work
-      def find_book_rental(title)
-        for book in @book
-          if book[:title] == title
-            return book[:rental_details]
-          end
-        end
-      end
-
-      def add_book()
-          new_book = {
-            title: "the castle",
-            rental_details: {
-              student_name: "",
-              date: ""
-            }
-          }
-          @books.push(new_book)
-      end
-
-
-
-
-
   end
+    def find_book(title)
+      for book in @books
+        if book[:title] == title
+          return book
+        end
+      end
+    end
+
+    # doesn't work
+    def find_book_rental(title)
+      for book in @book
+        if book[:title] == title
+          return book[:rental_details]
+        end
+      end
+    end
+
+    def add_book()
+      new_book = {
+        title: "the castle",
+        rental_details: {
+          student_name: "",
+          date: ""
+        }
+      }
+      @books.push(new_book)
+    end
+
+    def change_book_details(title, name, date)
+      # for book in @books
+      #   book[:title] = title,
+      #   book[:name] = name,
+      #   book[:rental_details][:date] = date
+        return {
+          title: title,
+          rental_details: {
+            student_name: name,
+            date: date}}
+      
+
+
+
+    end
 
 
 
