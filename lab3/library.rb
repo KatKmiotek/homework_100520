@@ -53,17 +53,12 @@ class Library
       @books.push(new_book)
     end
 
-    def change_book_details(title, name, date)
-      # for book in @books
-      #   book[:title] = title,
-      #   book[:name] = name,
-      #   book[:rental_details][:date] = date
-        return {
-          title: title,
-          rental_details: {
-            student_name: name,
-            date: date}}
-      
+    def change_book_details(title, rental_details)
+      for book in @books
+        if book[:title] == title
+          book[:rental_details] = rental_details
+        end
+      end
 
 
 
